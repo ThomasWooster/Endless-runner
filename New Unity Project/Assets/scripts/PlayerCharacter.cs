@@ -15,7 +15,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public void incrementScore(int value)
     {
-        score += value;
+        manager.Instance.g_score += 1;
     }
 
 
@@ -50,6 +50,6 @@ public class PlayerCharacter : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
 
-        textref.text = "Score:" + score;
+        textref.text = "Score:" + manager.Instance.g_score;
     }
 }
