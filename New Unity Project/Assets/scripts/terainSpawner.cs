@@ -10,7 +10,7 @@ public class terainSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = 0.0f;
+        timer = 7.0f;
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class terainSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 5)
+        if (timer >= 7)
         {
             print("spawn");
             timer = 0.0f;
