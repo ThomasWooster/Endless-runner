@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class removeObjects : MonoBehaviour
+public class removeObjects : MonoBehaviour // used in the scene claner, way behind the mapedge object this cleans of the terrain to keep memory usage stable.
 {
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class removeObjects : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // anything that collied with the trigger box is deleted 
     {
         Destroy(other.gameObject);
 

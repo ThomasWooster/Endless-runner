@@ -2,27 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class terainSpawner : MonoBehaviour
+public class terainSpawner : MonoBehaviour // attached to a collision mesh trigger as the spawn point, multiple spawners can be used with differet objects and tims.
 {
-    float timer;
-    public GameObject prefabTerain;
+    public float timer; // how long between eatch spawning, can be changed in editor
+    public GameObject prefabTerain; // what object or map cluster is to be spawned, can be changed from the editor
+    float timerTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        timer = 7.0f;
+        timerTrigger = timer; // the timer holds its own trigger because it imediatly fires.
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        timer += Time.deltaTime; // runs the timer
 
-        if (timer >= 7)
+        if (timer >= timerTrigger) // checks if the timer has triggerd
         {
-            print("spawn");
-            timer = 0.0f;
-            Instantiate(prefabTerain, transform.position, Quaternion.identity);
+            timer = 0.0f; //  resets the timer
+            Instantiate(prefabTerain, transform.position, Quaternion.identity); // instancsiates/spawns the selected terain at the spawners location with an identity rotation
         }
     }
 }

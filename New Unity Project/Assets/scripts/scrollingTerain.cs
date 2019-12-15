@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scrollingTerain : MonoBehaviour
+public class scrollingTerain : MonoBehaviour // placed in any object that needs to move trough the level. on terain goups only the root needs this script
 {
     
 
-    float speed = 4.0f;
+    public float speed = 4.0f; // the speed of the level, can be attached to an outside number for variance.
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class scrollingTerain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(-speed * Time.deltaTime, 0, 0);
+        transform.Translate(-speed * Time.deltaTime, 0, 0); // translate is used for movment
 
         
     }
